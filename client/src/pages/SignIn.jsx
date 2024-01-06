@@ -49,7 +49,7 @@ export default function SignIn() {
         className='border p-3 rounded-lg' id='email' onChange={handleChange}/>
         <input type="password" placeholder='password'
         className='border p-3 rounded-lg' id='password' onChange={handleChange}/>
-        <button disabled={loading} className='bg-rose-400 text-white my-4 font-semibold p-3 rounded-lg uppercase hover:opacity-90 disabled:opacity-80'>
+        <button disabled={loading} className='bg-rose-400 text-white mt-4 font-semibold p-3 rounded-lg uppercase hover:opacity-90 disabled:opacity-80'>
           {loading ? 'Loading...' : 'Sign In'}
           </button>
           <OAuth/>
