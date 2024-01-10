@@ -7,6 +7,7 @@ import {updateUserStart, updateUserSuccess, updateUserFailure} from '../redux/us
 import { useDispatch } from 'react-redux';
 import {deleteUserStart,deleteUserSuccess, deleteUserFailure} from '../redux/user/userSlice.js';
 import {signOutUserStart,signOutUserSuccess, signOutUserFailure} from '../redux/user/userSlice.js';
+import {Link} from 'react-router-dom';
 export default function Profile() {
   const { currentUser, loading, error } = useSelector(state => state.user);
   const fileRef = useRef(null);
@@ -122,7 +123,8 @@ export default function Profile() {
         <input defaultValue={currentUser.username} type="text" placeholder='username' id='username' className=' border p-3 rounded-lg my-0.5' onChange={handleChange} />
         <input defaultValue={currentUser.email} type="email" placeholder='email' id='email' className=' border p-3 rounded-lg my-0.5' onChange={handleChange} />
         <input type="password" placeholder='password' id='password' className=' border p-3 rounded-lg my-0.5' onChange={handleChange}/>
-        <button disabled={loading} className='bg-red-700 text-white font-semibold rounded-lg mt-2 p-3 uppercase hover:bg-opacity-90 disabled:opacity-80'>{loading ? 'Loading...' : 'Update'}</button>
+        <button disabled={loading} className='bg-amber-500 text-white font-semibold rounded-lg mt-2 p-3 uppercase hover:bg-opacity-90 disabled:opacity-80'>{loading ? 'Loading...' : 'Update'}</button>
+        <Link className='bg-green-500 text-white p-3 rounded-lg font-semibold uppercase text-center hover:opacity-90' to={"/create-listing"}>Create Listing</Link>
       </form>
       <div className='flex justify-between mt-5 '>
         <span onClick={handleDeleteUser} className='text-red-700 cursor-pointer'>Delete Account</span>
