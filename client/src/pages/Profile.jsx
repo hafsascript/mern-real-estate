@@ -167,7 +167,7 @@ export default function Profile() {
       <p className='text-green-700 mt-5'>
         {updateSuccess ? 'User is updated successfully!' : ''}
       </p>
-      <button onClick={handleShowListings}className='text-green-800 w-full'>Show Listings</button>
+      <button onClick={handleShowListings}className='text-green-800 w-full mt-2'>Show Listings</button>
       <p className='text-red-700 mt-5'>
         {showListingsError ? 'Error showing listings' : ''}
       </p>
@@ -196,7 +196,9 @@ export default function Profile() {
 
               <div className='flex flex-col item-center'>
                 <button onClick={()=>handleDeleteListing(listing._id)} className='text-red-700 uppercase'>Delete</button>
+                <Link to={`/update-listing/${listing._id}`}>
                 <button className='text-green-700 uppercase'>Edit</button>
+                </Link>
               </div>
             </div>
           ))}
