@@ -13,6 +13,8 @@ import {
     FaParking,
     FaShare,
   } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+import Contact from '../components/Contact';
   
 
 export default function Listing() {
@@ -20,7 +22,9 @@ export default function Listing() {
     const params = useParams();
     const [listing, setListing] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);const [copied, setCopied] = useState(false);
+    const [error, setError] = useState(false);
+    const [contact, setContact] = useState(false);
+    const {currentUser} = useSelector((state) => state.user);
     useEffect(()=>{
         const fetchListing = async ()=>{
             try{
@@ -113,6 +117,10 @@ export default function Listing() {
                     {listing.furnished ? 'Furnished' : 'Unfurnished'}
                   </li>
                 </ul>
+                {listing.userRef !== currentUser._id && !contact &&(
+                <button onClick={()=>setContact(true)} className='bg-slate-700 text-white rounded-lg mt-1 uppercase font-semibold hover:opacity-90 p-3'>Contact Landlord</button>)}
+                {contact && <Contact listing={listing}/>}
+                
               </div>
             </div>
           )}
