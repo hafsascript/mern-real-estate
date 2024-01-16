@@ -93,8 +93,8 @@ export default function Listing() {
                 <p className='text-2xl font-semibold'>
                   {listing.name} - ${' '}
                   {listing.offer
-                    ? listing.discountedPrice
-                    : listing.regularPrice}
+                    ? listing.discountedPrice.toLocaleString('en-US')
+                    : listing.regularPrice.toLocaleString('en-US')}
                   {listing.type === 'rent' && ' / month'}
                 </p>
                 <p className='flex items-center mt-2 gap-1 text-slate-600  text-sm'>
