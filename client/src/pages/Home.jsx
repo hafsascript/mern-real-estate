@@ -11,7 +11,7 @@ export default function Home() {
   const [sellListings, setSellListings] = useState([]);
   const [rentListings, setRentListings] = useState([]);
   SwiperCore.use([Navigation]);
-  
+
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
@@ -47,11 +47,11 @@ export default function Home() {
   }, []);
   return (
     <div>
-      
+
       <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
         <h1 className='text-zinc-500 font-bold text-4xl lg:text-6xl'>
           Find a place just for <span className='text-slate-700'>you</span>
-          
+
         </h1>
         <div className='text-neutral-400 text-xs sm:text-sm'>
           Ready to move but aren't sure where to go? Don't worry!
@@ -68,7 +68,7 @@ export default function Home() {
         </Link>
       </div>
 
-      
+
       <Swiper navigation>
         {offerListings &&
           offerListings.length > 0 &&
@@ -79,14 +79,14 @@ export default function Home() {
                   background: `url(${listing.imageUrls[0]}) center no-repeat`,
                   backgroundSize: 'cover',
                 }}
-                className='h-[500px]'
+                className='h-[600px]'
                 key={listing._id}
               ></div>
             </SwiperSlide>
           ))}
       </Swiper>
 
-      
+
 
       <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
         {offerListings && offerListings.length > 0 && (
