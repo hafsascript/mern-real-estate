@@ -5,7 +5,7 @@ import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
 import listingRouter from './routes/listing.route.js';
 import cookieParser from 'cookie-parser';
-import path from 'path';
+import cors from 'cors';
 
 
 
@@ -18,6 +18,13 @@ mongoose.connect(process.env.MONGO).then(() => {
 
 
 const app = express()
+app.use(cors(
+    {
+        origin:["https://hafsa-estate.vercel.app"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+));
 app.use(express.json());
 app.use(cookieParser());
 
