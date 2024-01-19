@@ -56,13 +56,13 @@ export default function Home() {
         <div className='text-neutral-400 text-xs sm:text-sm'>
           Ready to move but aren't sure where to go? Don't worry!
           <br />
-          Hafsa Estate  is all you need
+          Hafsa Estate  is all you need - Learn <Link to='/about' ><span className='bg-purple-400 text-white  mt-1 hover:opacity-90 px-1 hover:underline'>About Us</span></Link>
           <br />
           We have a vast range of properties for you to choose from
         </div>
         <Link
           to={'/search'}
-          className='text-xs sm:text-sm text-teal-900 font-bold hover:underline'
+          className='text-[17px] sm:text-[24px] text-teal-900 font-bold my-1 hover:underline'
         >
           Let's get started...
         </Link>
